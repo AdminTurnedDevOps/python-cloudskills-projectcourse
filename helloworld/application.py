@@ -9,6 +9,10 @@ application = Flask(__name__)
 def get():
     return Response(json.dumps({'Output': 'Hello World'}), mimetype='application/json', status=200)
 
+@application.route('/home/, methods=['GET'])
+def home():
+    return 'You are home'
+
 @application.route('/', methods=['POST'])
 def post():
     return Response(json.dumps({'Output': 'Hello World'}), mimetype='application/json', status=200)
